@@ -165,7 +165,12 @@ public class AntiIllegals extends JavaPlugin {
             // Christmas Illegals
             /*if (itemStack.getItemMeta().getLore().contains("Christmas Advent Calendar 2020"))
                 return ItemState.clean;*/
-
+            
+            // Patches unbreakable elytras from the lore
+            if (itemStack.getItemMeta().getLore().contains("sus")) {
+                itemStack.setAmount(0);
+                return ItemState.illegal;
+            }
             // Thunderclouds Item
             if (itemStack.getItemMeta().getLore().contains("ThunderCloud's Happy Little Friend. :)")) {
                 itemStack.setAmount(0);
